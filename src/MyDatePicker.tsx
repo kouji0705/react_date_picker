@@ -8,13 +8,12 @@ function MyDatePicker() {
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      {' '}
       <DatePicker
         autoOk
         variant="inline"
         inputVariant="outlined"
-        label="Select Date"
-        format="MM/dd/yyyy"
+        label="日付選択"
+        format="yyyy/MM/dd"
         value={selectedDate}
         onChange={(date: MaterialUiPickersDate) => handleDateChange(date)}
       />
