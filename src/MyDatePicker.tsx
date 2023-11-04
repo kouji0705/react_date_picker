@@ -6,6 +6,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardTimePicker,
   KeyboardDatePicker,
+  KeyboardDateTimePicker,
 } from '@material-ui/pickers';
 
 export default function MaterialUIPickers() {
@@ -53,6 +54,20 @@ export default function MaterialUIPickers() {
             'aria-label': 'change time',
           }}
         />
+        <Grid container justifyContent="space-around">
+          <KeyboardDateTimePicker
+            variant="inline"
+            format="MM/dd/yyyy HH:mm" // 日付と時間のフォーマットを設定
+            margin="normal"
+            id="date-time-picker"
+            label="Date and Time picker"
+            value={selectedDate}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date and time',
+            }}
+          />
+        </Grid>
       </Grid>
     </MuiPickersUtilsProvider>
   );
