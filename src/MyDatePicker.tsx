@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';
 
 function MyDatePicker() {
-  const [selectedDate, handleDateChange] = useState(null);
+  const [selectedDate, handleDateChange] = useState<Date | null>(null);
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -15,10 +16,7 @@ function MyDatePicker() {
         label="Select Date"
         format="MM/dd/yyyy"
         value={selectedDate}
-        // onChange={handleDateChange}
-        onChange={() => {
-          console.log('handleDateChange');
-        }}
+        onChange={(date: MaterialUiPickersDate) => handleDateChange(date)}
       />
     </MuiPickersUtilsProvider>
   );
