@@ -14,6 +14,7 @@ export default function MaterialUIPickers() {
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
   };
+  console.log('selectedDate', selectedDate);
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -21,7 +22,7 @@ export default function MaterialUIPickers() {
         <KeyboardDatePicker
           disableToolbar
           variant="inline"
-          format="MM/dd/yyyy"
+          format="yyyy/dd/MM HH:mm"
           margin="normal"
           id="date-picker-inline"
           label="Date picker inline"
